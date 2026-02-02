@@ -91,7 +91,6 @@ def merge(left, right):
     return result
 
 def merge_sort(arr):
-    # điều kiện dừng
     if len(arr) <= 1:
         return arr
 
@@ -110,7 +109,6 @@ def benchmark_one_file(filepath):
         data = list(map(float, f.read().split()))
 
     print(f"\n File: {os.path.basename(filepath)}")
-    print(f"Số phần tử: {len(data)}")
 
     # QuickSort
     arr_qs = data.copy()
@@ -151,3 +149,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
