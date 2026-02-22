@@ -24,11 +24,12 @@
 </div>
 
 2. Biểu đồ thời gian thực thi
-   <img width="1281" height="462" alt="image" src="https://github.com/user-attachments/assets/a7a20665-d638-4cef-8789-ceff7b39fed1" />
+   
+   <img width="1400" height="800" alt="image" src="https://github.com/user-attachments/assets/52d7d089-8e42-4aa3-a794-dc1c326cc214" />
 
 #### II.	Kết luận:
 Theo kết quả thử nghiệm có thể thấy:
--	PythonSort luôn cho thời gian thực thi nhanh nhất trên tất cả các bộ dữ liệu (chỉ từ khoảng 20–240 ms), vượt trội so với ba thuật toán còn lại. Điều này cho thấy thuật toán sắp xếp có sẵn trong Python được tối ưu rất tốt.
--	Trong ba thuật toán tự cài đặt, QuickSort có hiệu năng tốt nhất, với thời gian trung bình khoảng 700–1900 ms. MergeSort đứng thứ hai, chậm hơn QuickSort nhưng ổn định hơn HeapSort. HeapSort là thuật toán chậm nhất, với thời gian thường trên 3000–5500 ms.
--	Nhìn chung, thứ tự hiệu năng từ nhanh đến chậm là: **PythonSort → QuickSort → MergeSort → HeapSort**.
+- Hiệu năng vượt trội: PythonSort (Timsort) nhanh hơn các thuật toán tự cài đặt từ 100 - 1000 lần, khẳng định ưu thế tuyệt đối của các hàm thư viện đã được tối ưu hóa ở cấp độ hệ thống.
+- Trong các thuật toán cài đặc thủ công, hiệu năng hay tốc độ giảm dần theo thứ tự: **Quicksort > Mergesort > Heapsort**.
+- Về độ ổn định thì Quicksort hoạt động ổn định nhất trên các bộ dữ liệu thử nghiệm, trong khi Heapsort và Mergesort bị chậm đáng kể ở các tệp dữ liệu đặc biệt (như data6.txt).
 
