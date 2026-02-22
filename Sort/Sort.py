@@ -1,5 +1,6 @@
 import os
 import time
+import numpy as np
 
 #-------------------------------QUICKSORT--------------------------------
 
@@ -72,21 +73,20 @@ def heapsort(arr):
 #-------------------------------MERGESORT--------------------------------
 
 def merge(left, right):
-    result = []
-    i = j = 0
+    result = np.empty(len(left) + len(right), dtype=left.dtype)
+    i = j = k = 0
 
-    # so sánh từng phần tử
     while i < len(left) and j < len(right):
         if left[i] <= right[j]:
-            result.append(left[i])
+            result[k] = left[i]
             i += 1
         else:
-            result.append(right[j])
+            result[k] = right[j]
             j += 1
+        k += 1
 
-    # thêm phần còn lại
-    result.extend(left[i:])
-    result.extend(right[j:])
+    result[k:k+len(left)-i] = left[i:]
+    result[k+len(left)-i:] = right[j:]
 
     return result
 
@@ -106,7 +106,7 @@ def merge_sort(arr):
 
 def benchmark_one_file(filepath):
     with open(filepath, "r") as f:
-        data = list(map(float, f.read().split()))
+        data = np.loadtxt(filepath, dtype=float)
 
     print(f"\n File: {os.path.basename(filepath)}")
 
@@ -131,7 +131,7 @@ def benchmark_one_file(filepath):
     # Python sort
     arr_py = data.copy()
     start = time.perf_counter()
-    arr_py = sorted(arr_py)
+    arr_py = np.sort(arr_py)
     print(f"Python sort: {time.perf_counter() - start:.6f} giây")
 
 
@@ -149,4 +149,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
